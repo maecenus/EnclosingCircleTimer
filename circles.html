@@ -1,0 +1,95 @@
+<!DOCTYPE=HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+/*body {
+  background-image: url("1.jpg");
+}*/
+
+circle { 
+  stroke: #000;
+  fill: none;
+  stroke-width: 4px;
+  transition: .2s;
+  stroke-dashArray: 0 600;
+}
+text {
+  font-family: Titillium Web, sans-serif;
+  font-size: 12px;
+  text-anchor: middle;
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="gits">
+  <circle cx="50" cy="50" r="22">
+    <animateTransform attributeName="transform"
+      attributeType="XML" type="rotate" from="0 50 50"
+          to="360 50 50" dur="10s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="50" r="24">
+    <animateTransform attributeName="transform"
+      attributeType="XML" type="rotate" from="0 50 50"
+          to="360 50 50" dur="8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="50" r="26">
+    <animateTransform attributeName="transform"
+      attributeType="XML" type="rotate" from="0 50 50"
+          to="-360 50 50" dur="8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="50" r="30">
+    <animateTransform attributeName="transform"
+      attributeType="XML" type="rotate" from="0 50 50"
+          to="360 50 50" dur="14s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="50" r="34">
+    <animateTransform attributeName="transform"
+      attributeType="XML" type="rotate" from="0 50 50"
+          to="360 50 50" dur="18s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="50" r="34">
+    <animateTransform attributeName="transform"
+      attributeType="XML" type="rotate" from="0 50 50"
+          to="-360 50 50" dur="20s" repeatCount="indefinite" />
+  </circle>
+  <text x="49" y="54">0</text>
+</svg>
+
+<script>
+  var circles = document.getElementsByTagName("circle"),
+  progress = document.getElementsByTagName("text")[0];
+
+  function getRandomInRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  for (var j = 0; j < circles.length; ++j) {
+    var radius = parseInt(circles[j].getAttribute('r'), 10);
+    circles[j].circumference = 2 * radius * Math.PI;
+    circles[j].init = getRandomInRange(20,80);
+    circles[j].style.strokeDasharray = circles[j].init + " " + circles[j].circumference;
+  }
+
+var i = 0;
+var timer = setInterval(function() { 
+  progress.textContent = i;
+    if (i == 100) {
+      clearInterval(timer);
+    } else {
+        i++;  
+        for (var j = 0; j < circles.length; ++j) {
+            circles[j].style.strokeDasharray = circles[j].init + i + " " + circles[j].circumference;
+      }
+}}, 500)
+
+</script>
+</body>
+</html>
