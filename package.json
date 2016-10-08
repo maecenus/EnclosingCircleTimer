@@ -1,0 +1,26 @@
+{
+  "name": "enclosingcircles",
+  "version": "1.0.0",
+  "description": "a simple timer app using JavaScript and SVG Circles",
+  "main": "circles.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maecenus/EnclosingCircleTimer.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "SVG",
+    "Timer",
+    "Ghost",
+    "Shell"
+  ],
+  "author": "Erik Thornton <erikthornton26@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maecenus/EnclosingCircleTimer/issues"
+  },
+  "homepage": "https://github.com/maecenus/EnclosingCircleTimer#readme"
+}
